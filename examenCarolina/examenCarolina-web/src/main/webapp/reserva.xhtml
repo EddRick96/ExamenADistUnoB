@@ -8,7 +8,8 @@ and open the template in the editor.
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Reservas - Parque "La Carolina"</title>
     </h:head>
@@ -32,7 +33,7 @@ and open the template in the editor.
                                 <p:outputLabel value="CANCHA:"></p:outputLabel>
                                 <p:inputText value="#{reservaManagedBean.reserva.cancha}"></p:inputText>
                                 <p:outputLabel value="FECHA:"></p:outputLabel>
-                                <p:inputText value="#{reservaManagedBean.reserva.fecha}"></p:inputText>
+                                <p:calendar value="#{reservaManagedBean.reserva.fecha}"></p:calendar>
                                 <p:outputLabel value="HORA:"></p:outputLabel>
                                 <p:inputText value="#{reservaManagedBean.reserva.hora}"></p:inputText>
                                 <p:outputLabel value="DESCRIPCIÓN:"></p:outputLabel>
@@ -76,7 +77,9 @@ and open the template in the editor.
                                     <p:outputLabel value="#{reserv.cancha}"></p:outputLabel>
                                 </p:column>
                                 <p:column headerText="FECHA">
-                                    <p:outputLabel value="#{reserv.fecha}"></p:outputLabel>
+                                    <p:outputLabel value="#{reserv.fecha}">
+                                        <f:convertDateTime pattern="YYYY-MM-DD"></f:convertDateTime>
+                                    </p:outputLabel>
                                 </p:column>
                                 <p:column headerText="HORA">
                                     <p:outputLabel value="#{reserv.hora}"></p:outputLabel>
