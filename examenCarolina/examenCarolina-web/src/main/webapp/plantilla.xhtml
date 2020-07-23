@@ -9,7 +9,7 @@
         <h:head>
             <f:facet name="first">
                 <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
-                <title>PrimeFaces</title>
+                <title>TiendaJEE</title>
             </f:facet>
         </h:head>
 
@@ -18,20 +18,34 @@
             <p:layout fullPage="true">
 
                 <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
-                    Header
+                    <div align="center">
+                        <h3>Escuela Politécnica Nacional</h3>
+                    </div>
                 </p:layoutUnit>
 
                 <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
-                    Footer
+                    <h6 align="left" style="margin: 0">
+                        <ul>
+                            <li>
+                                Erick Bolaños: <a href="erick.bolanos@epn.edu.ec">erick.bolanos@epn.edu.ec</a>
+                            </li>
+                            <li>
+                                Marco Orquera: <a href="marco.orquera@epn.edu.ec">marco.orquera@epn.edu.ec</a>
+                            </li>
+                            <li>
+                                Dennis Núñez: <a href="dennis.nunez@epn.edu.ec">dennis.nunez@epn.edu.ec</a>
+                            </li>
+                        </ul>
+                    </h6>
                 </p:layoutUnit>
 
                 <p:layoutUnit position="west" size="175" header="Left" collapsible="true">
                     <p:menu>
                         <p:submenu label="Resources">
-                            <p:menuitem value="Demo" url="http://www.primefaces.org/showcase-labs/ui/home.jsf" />
-                            <p:menuitem value="Documentation" url="http://www.primefaces.org/documentation.html" />
-                            <p:menuitem value="Forum" url="http://forum.primefaces.org/" />
-                            <p:menuitem value="Themes" url="http://www.primefaces.org/themes.html" />
+                            <p:menuitem value="Empleado" outcome="index.jsf" />
+                            <p:menuitem value="Cargo" url="#" />
+                            <p:menuitem value="Estado Civil" url="#" />
+                            <p:menuitem value="Proveedores" url="proveedor.jsf" />
 
                         </p:submenu>
 
@@ -39,7 +53,9 @@
                 </p:layoutUnit>
 
                 <p:layoutUnit position="center">
-                    Welcome to PrimeFaces
+                    <ui:insert name="content">
+
+                    </ui:insert>
                 </p:layoutUnit>
 
             </p:layout>
