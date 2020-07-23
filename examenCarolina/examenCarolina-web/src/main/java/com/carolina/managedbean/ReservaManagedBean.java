@@ -7,23 +7,16 @@ package com.carolina.managedbean;
 
 import com.carolina.entidades.Reserva;
 import com.carolina.session.ReservaFacadeLocal;
-import javax.enterprise.context.Dependent;
-import javax.faces.view.ViewScoped;
 import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
-import static javax.faces.application.FacesMessage.SEVERITY_ERROR;
 import javax.inject.Named;
+import javax.faces.view.ViewScoped;
 
-
-/**
- *
- * @author dennis
- */
 @Named(value = "reservaManagedBean")
-@Dependent
+@ViewScoped
 public class ReservaManagedBean implements Serializable, ManagedBeanInterfaces<Reserva>{
 
     @EJB
@@ -79,10 +72,10 @@ public class ReservaManagedBean implements Serializable, ManagedBeanInterfaces<R
     }
 
     @Override
-    public void eliminar(Reserva p) {
+    public void eliminar(Reserva r) {
         try{
             //ELIMINO EL EMPLEADO
-            reservaFacadeLocal.remove(p);
+            reservaFacadeLocal.remove(r);
             //LUEGO LISTO LOS EMPLEADOS
             listaReservas = reservaFacadeLocal.findAll();
             mostrarMensajeTry("ELIMINADO EXITOSAMENTE", FacesMessage.SEVERITY_INFO);
@@ -96,21 +89,19 @@ public class ReservaManagedBean implements Serializable, ManagedBeanInterfaces<R
         reserva = null;
     }
 
-    public List<Reserva> getListaProveedores() {
+    public List<Reserva> getListaReservas() {
         return listaReservas;
     }
 
-    public void setListaProveedores(List<Reserva> listaReservas) {
+    public void setListaReservas(List<Reserva> listaReservas) {
         this.listaReservas = listaReservas;
     }
 
-    public Reserva getProveedor() {
+    public Reserva getReserva() {
         return reserva;
     }
 
-    public void setProveedor(Reserva reserva) {
+    public void setReserva(Reserva reserva) {
         this.reserva = reserva;
-    }
-
-   
+    }  
 }

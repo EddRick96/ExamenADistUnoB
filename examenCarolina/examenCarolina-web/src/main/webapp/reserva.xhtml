@@ -11,7 +11,6 @@ and open the template in the editor.
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
         <title>Reservas - Parque "La Carolina"</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <h:body>
         <ui:composition template="plantilla.xhtml">
@@ -23,21 +22,21 @@ and open the template in the editor.
                              rendered = "#{reservaManagedBean.reserva != null}">
                         <div align = "center">
                             <h:panelGrid columns="2">
-                                <p:outputLabel value="CÓDIGO:"></p:outputLabel>
+                                <p:outputLabel value="ID:"></p:outputLabel>
                                 <p:inputText value="#{reservaManagedBean.reserva.id}"
                                              disabled="true"></p:inputText>
                                 <p:outputLabel value="NOMBRE:"></p:outputLabel>
                                 <p:inputText value="#{reservaManagedBean.reserva.nombre}"></p:inputText>
-                                <p:outputLabel value="RUC:"></p:outputLabel>
-                                <p:inputText value="#{reservaManagedBean.reserva.ruc}"></p:inputText>
-                                <p:outputLabel value="DIRECCIÓN:"></p:outputLabel>
-                                <p:inputText value="#{reservaManagedBean.reserva.direccion}"></p:inputText>
-                                <p:outputLabel value="E-MAIL:"></p:outputLabel>
-                                <p:inputText value="#{reservaManagedBean.reserva.email}"></p:inputText>
-                                <p:outputLabel value="CIUDAD:"></p:outputLabel>
-                                <p:inputText value="#{reservaManagedBean.reserva.ciudad}"></p:inputText>
-                                <p:outputLabel value="SITIO-WEB:"></p:outputLabel>
-                                <p:inputText value="#{reservaManagedBean.reserva.sitioweb}"></p:inputText>
+                                <p:outputLabel value="APELLIDO:"></p:outputLabel>
+                                <p:inputText value="#{reservaManagedBean.reserva.apellido}"></p:inputText>
+                                <p:outputLabel value="CANCHA:"></p:outputLabel>
+                                <p:inputText value="#{reservaManagedBean.reserva.cancha}"></p:inputText>
+                                <p:outputLabel value="FECHA:"></p:outputLabel>
+                                <p:inputText value="#{reservaManagedBean.reserva.fecha}"></p:inputText>
+                                <p:outputLabel value="HORA:"></p:outputLabel>
+                                <p:inputText value="#{reservaManagedBean.reserva.hora}"></p:inputText>
+                                <p:outputLabel value="DESCRIPCIÓN:"></p:outputLabel>
+                                <p:inputText value="#{reservaManagedBean.reserva.descripcion}"></p:inputText>
                             </h:panelGrid>
                         </div>
 
@@ -53,7 +52,7 @@ and open the template in the editor.
                         </div>
                     </p:panel>
 
-                    <p:panel header="LISTA DE PROVEEDORES" rendered="#{reservaManagedBean.reserva == null}">
+                    <p:panel header="LISTA DE RESERVAS" rendered="#{reservaManagedBean.reserva == null}">
                         <div align="center">
                             <p:commandButton value="INGRESAR"
                                              action="#{reservaManagedBean.nuevo()}"
@@ -65,25 +64,25 @@ and open the template in the editor.
                         <div align="center">
                             <p:dataTable id="tablacargo" value="#{reservaManagedBean.listaReservas}" var="reserv">
                                 <p:column headerText="ID">
-                                    <p:outputLabel value="#{reserv.codigo}"></p:outputLabel>
+                                    <p:outputLabel value="#{reserv.id}"></p:outputLabel>
                                 </p:column>
                                 <p:column headerText="NOMBRE">
                                     <p:outputLabel value="#{reserv.nombre}"></p:outputLabel>
                                 </p:column>
-                                <p:column headerText="RUC">
-                                    <p:outputLabel value="#{reserv.ruc}"></p:outputLabel>
+                                <p:column headerText="APELLIDO">
+                                    <p:outputLabel value="#{reserv.apellido}"></p:outputLabel>
                                 </p:column>
-                                <p:column headerText="DIRECCIÓN">
-                                    <p:outputLabel value="#{reserv.direccion}"></p:outputLabel>
+                                <p:column headerText="CANCHA">
+                                    <p:outputLabel value="#{reserv.cancha}"></p:outputLabel>
                                 </p:column>
-                                <p:column headerText="E-MAIL">
-                                    <p:outputLabel value="#{reserv.email}"></p:outputLabel>
+                                <p:column headerText="FECHA">
+                                    <p:outputLabel value="#{reserv.fecha}"></p:outputLabel>
                                 </p:column>
-                                <p:column headerText="CIUDAD">
-                                    <p:outputLabel value="#{reserv.ciudad}"></p:outputLabel>
+                                <p:column headerText="HORA">
+                                    <p:outputLabel value="#{reserv.hora}"></p:outputLabel>
                                 </p:column>
-                                <p:column headerText="SITIO-WEB">
-                                    <p:outputLabel value="#{reserv.sitioweb}"></p:outputLabel>
+                                <p:column headerText="DESCRIPCIÓN">
+                                    <p:outputLabel value="#{reserv.descripcion}"></p:outputLabel>
                                 </p:column>
                                 <p:column headerText="EDITAR">
                                     <p:commandButton action="#{reservaManagedBean.seleccionar(reserv)}"
