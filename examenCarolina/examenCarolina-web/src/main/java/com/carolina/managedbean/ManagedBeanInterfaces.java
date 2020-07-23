@@ -5,6 +5,9 @@
  */
 package com.carolina.managedbean;
 
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+
 /**
  *
  * @author dennis
@@ -21,5 +24,11 @@ public interface ManagedBeanInterfaces <R>{
     public void eliminar(R r);
     
     public void cancelar();
+    
+    default void mostrarMensajeTry(String mensaje, FacesMessage.Severity tipo){
+        FacesMessage msg = new FacesMessage(tipo, mensaje, "");
+        FacesContext fc = FacesContext.getCurrentInstance();
+        fc.addMessage(null, msg);
+    }
     
 }
