@@ -16,11 +16,13 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author dennis
+ * @author erick
  */
 @Entity
 @Table(name = "reserva")
@@ -39,19 +41,25 @@ public class Reserva implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
+    @NotNull
     @Column(name = "id")
     private Integer id;
+    @Size(max = 50)
     @Column(name = "nombre")
     private String nombre;
+    @Size(max = 50)
     @Column(name = "apellido")
     private String apellido;
+    @Size(max = 50)
     @Column(name = "cancha")
     private String cancha;
     @Column(name = "fecha")
     @Temporal(TemporalType.DATE)
     private Date fecha;
+    @Size(max = 10)
     @Column(name = "hora")
     private String hora;
+    @Size(max = 80)
     @Column(name = "descripcion")
     private String descripcion;
 

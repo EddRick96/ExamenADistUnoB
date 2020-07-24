@@ -12,7 +12,7 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author dennis
+ * @author erick
  */
 @Stateless
 public class ReservaFacade extends AbstractFacade<Reserva> implements ReservaFacadeLocal {

@@ -11,7 +11,7 @@ import javax.ejb.Local;
 
 /**
  *
- * @author dennis
+ * @author erick
  */
 @Local
 public interface ReservaFacadeLocal {

@@ -8,10 +8,6 @@ package com.carolina.managedbean;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
-/**
- *
- * @author dennis
- */
 public interface ManagedBeanInterfaces <R>{
     //DEFINIR LOS METODO
     

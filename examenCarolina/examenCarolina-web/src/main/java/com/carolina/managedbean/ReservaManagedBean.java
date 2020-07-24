@@ -28,7 +28,7 @@ public class ReservaManagedBean implements Serializable, ManagedBeanInterfaces<R
      //VARIABLE DE TIPO LISTACARGOS
     private List<Reserva> listaReservas;
     
-    //ESTO ES CUADNO QUIERO AGREGAR O EDITAR UN CARGO
+    //ESTO ES CUANDO QUIERO AGREGAR O EDITAR UN CARGO
     private Reserva reserva;
    
     @PostConstruct
